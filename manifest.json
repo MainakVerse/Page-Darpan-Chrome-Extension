@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Page Darpan",
+  "version": "1.0",
+  "description": "Shows a small bar-chart summary of the top keywords on a Google search results page (page 1 only). Processes everything locally.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/search*"],
+      "js": [
+        "chart.min.js",
+        "overlay.js",
+        "content.js"
+      ],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [],
+  "host_permissions": []
+}
